@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>File Upload Web App</h1>
+    </header>
+    <main>
+        <section class="file-upload">
+            <h2>Upload Files</h2>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" id="file" accept=".jpg, .jpeg, .png, .ppt, .pptx, .docx, .pdf" required>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+        <section class="file-display">
+            <h2>Uploaded Files</h2>
+            <ul>
+                <!-- Display uploaded files here -->
+                {% for file in files %}
+                <li><a href="{{ url_for('download', filename=file.filename) }}">{{ file.filename }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

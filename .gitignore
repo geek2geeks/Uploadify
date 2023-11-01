@@ -1,4 +1,21 @@
-# .gitignore
-node_modules/
+# Ignore virtual environment directories (e.g., venv)
+venv/
+
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore local development settings (e.g., .env for environment variables)
+.env
+
+# Ignore any log files
 *.log
-.DS_Store
+
+# Ignore user-specific IDE settings and directories
+.idea/
+.vscode/
+
+# Ignore compiled Python files (e.g., .pyc)
+*.pyc
+
+# Ignore the 'uploads' directory if you store uploaded files there
+static/uploads/
