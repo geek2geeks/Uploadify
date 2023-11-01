@@ -19,11 +19,13 @@ def upload_file():
     if file.filename == '':
         return 'No selected file'
     if file:
+        print('File received:', file.filename)  # Add this line for logging
         # Handle the file (e.g., save it to the uploads directory)
         # You should also check the file type, handle duplicates, and more
         # Here's a basic example to save the file:
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
         return 'File uploaded successfully'
+
 
 if __name__ == '__main__':
     app.run(debug=True)

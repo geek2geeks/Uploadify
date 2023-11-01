@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Validate file input
         if (!fileInput.files.length) {
-            console.error('No file selected.');
+            alert('Please select a file.'); // Display an alert message
             return;
         }
 
